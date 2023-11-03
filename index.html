@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My website</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="This is my personal website"/>
+</head>
+<body class="body">
+  <nav>
+      <a class="active" href="index.html">Home</a>
+      <a href="about-us.html">About-us</a>
+    </nav>
+    <div id="text"></div>
+    <!--Asyncronous Function building a clock with setInterval function-->
+  <script>
+       var msg = document.getElementById("text");
+      function clock() {
+          const mydate = new Date();
+          var myIntervalID = setInterval(function () {
+              let v_date = new Date();
+              msg.innerHTML = v_date.getHours() + ":" +
+                               v_date.getMinutes() + ":" +
+                               v_date.getSeconds();
+          }, 1000);
+         setTimeout(function(){clearInterval(myIntervalID);},30000);
+      }
+      clock();
+  </script>
+	<header class="header fade-in">
+      <h1>My personal Website</h1>
+      <h3>Vruti Patel</h3>
+  </header>
+  <main>
+    
+ <article>
+      <p class="grid-container">
+        <img class="image" src="IMG_8432.JPG" alt="image">
+      I am vruti patel.I came to canada in year of 2019.During my backhome i did Masters of computer applications.
+      As did studied in computer field i had some idea about HTML and CSS so it become easy to grasp everything so easily
+      Web developer remained all time favorite subject of mine.i use to learn each and everything and also i use to search different tags and different ways to design my website
+      Before i decided to join career coaching from correlation i got many positive reviews for correlation.We started to learn with basics of HTML,HTML5 and also advance HTML.
+      With this we are heading to CSS.and then slowly we will learn how make website<br>
+      I love to design my room and every stuff which looks perfect and elegant.Reading novels and listening music and the fun part of my hobby is to shop,shop and shop&#128526;shopping makes my day even better Hanging out with friends and having fun thats make my day Being with friends is threaputic and relief from stress.
+      </p>
+      </article>
+    <form class="inside fade-in" action="" method="get">
+      <h2 class="h2">Your Details Goes Here</h2>
+      <label for="fname">First Name:</label><br>
+      <input type="text" id="Fname" name="Fname" class="focus-example" placeholder="Enter name"><br><br>
+      <label for="lname">Last Name:</label><br>
+      <input type="text" id="lname" name="lname"  class="focus-example" placeholder="Enter lastname"><br><br>
+       <label for="email">E-Mail:</label><br>
+      <input type="email" id="email" name="email" class="focus-example" placeholder="Enter E-mail"><br><br>
+       <label for="pnum">Phone Number:</label><br>
+      <input type="number" id="pnum" name="pnum" class="focus-example" placeholder="Number"><br><br>
+      <button class="button" type="submit">Submit</button>
+      <button type="submit" formaction="example.php">Save</button>
+     </form>
+
+     <!--Google Map with API Keys-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsdrm2RLyEmjmI-KamMNvYGzn_RuKx27c&callback=initMap&v=weekly"
+      defer></script>
+      <div id="map" style="width: 500px; height: 300px;"></div>
+<script>
+    function initMap() {
+            
+            const coordinates = { lat: 37.422040, lng: -122.082810 };
+           
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: coordinates,
+            });
+           
+const marker = new google.maps.Marker({
+               position: coordinates,
+               map: map,
+           });
+           const circle = new google.maps.Circle({
+                    strokeColor: "blue",
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: "#FFF",
+                    fillOpacity: 0.5,
+                    map,
+                    center: coordinates,
+                    radius: 600,
+            });
+        }
+        // inside the initMap() fucntion
+
+map.addListener("click", (e) => {
+                alert("You clicked the map at " + JSON.stringify(e.latLng.toJSON(), null, 2));
+            });
+        
+window.initMap = initMap;
+
+
+</script>
+  </main>
+<footer class="footer">
+    <a href="https://www.linkedin.com/" rel="me"><img title="linkedin" src="linked in.png" alt="linked in" width="26" height="26">
+    <a href="https://twitter.com/" rel="me"><img title="twitter" src="twitter.png" alt="linked in" width="26" height="26">
+      
+</footer>
+
+
+
+
+</body>
+</html>
